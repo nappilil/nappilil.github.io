@@ -1,6 +1,7 @@
 import './App.css'
 import Home from './Home';
 import { Route, Routes, Link, Navigate } from 'react-router-dom'
+import Project from './Project'
 
 function App() {
   return (
@@ -8,13 +9,15 @@ function App() {
       <header className="py-4 px-8 shadow-md">
         <nav role="navigation" className="flex justify-between items-center">
           <h1 className="text-2xl font-bold">Lilli Nappi</h1>
-          <Link to='/'>Home</Link>
-          <Link to='/projects'>Projects</Link>
-          <Link to='/contact'>Contact</Link>
+            <Link to='/'>Home</Link>
+            <Link to='/projects'>Projects</Link>
+            <Link to='/contact'>Contact</Link>
         </nav>
       </header>
       <Routes>
         <Route path='/' element={<Home />} />
+        <Route path='/projects' element={<Project />} />
+
       </Routes>
       <footer className="py-4 text-center border-t mt-8">
         <p>© 2025 Lilli Nappi</p>

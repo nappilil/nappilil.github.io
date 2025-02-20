@@ -1,4 +1,11 @@
 import React, { useState } from 'react';
+import LinkedInLogo from "../assets/linkedin-original.svg"
+import StevensLogo from "../assets/stevens-institute-of-technology-logo.png"
+import BDXLogo from "../assets/BDX.png"
+import CodeNinjaLogo from "../assets/code-ninja.png"
+import Resume from "../assets/Lilli-Nappi-Resume-2025.pdf"
+import ResumeIcon from "../assets/resume.svg"
+import EmailIcon from "../assets/email.svg"
 import './App.css';
 
 function Home() {
@@ -17,7 +24,7 @@ function Home() {
                 {/* Image Aligned with Title */}
                 <div className="absolute -left-12 top-0">
                   <img
-                    src="https://companieslogo.com/img/orig/BDX-cb35179f.png?t=1648189770"
+                    src={BDXLogo}
                     alt="Becton Dickinson"
                     className="w-8 h-8 rounded-full"
                   />
@@ -38,7 +45,7 @@ function Home() {
                 {/* Image Aligned with Title */}
                 <div className="absolute -left-12 top-0">
                   <img
-                    src="https://media.licdn.com/dms/image/v2/D4E0BAQGNgS0IOGKDTw/company-logo_100_100/company-logo_100_100/0/1735687347709/codeninjas_logo?e=1747872000&v=beta&t=j1OFb9XJfFxZYlHbQ2IeeA9QEMk_CusJQeon6Aaz8ZI"
+                    src={CodeNinjaLogo}
                     alt="Code Ninjas Logo"
                     className="w-8 h-8 rounded-full"
                   />
@@ -88,7 +95,7 @@ function Home() {
         <div>
           <div className="flex items-center space-x-2 mb-2">
             <img
-              src="https://th.bing.com/th/id/OIP.Np4_H9wQYBowqRSNiNWMUAHaH8?rs=1&pid=ImgDetMain"
+              src={StevensLogo}
               alt="Stevens Institute of Technology"
               className="w-8 h-8" // Smaller logo size
             />
@@ -134,98 +141,27 @@ function Home() {
           {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/lilli-nappi-727402262/"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline inline-flex items-center"
+            target="_blank"
+            rel="noopener noreferrer"
           >
-            LinkedIn
+            <img src={LinkedInLogo} alt="LinkedIn" className="w-5 h-5 mr-2" />
           </a>
           {/* Resume Download */}
           <a
-            href="/resume.pdf"  // Replace with actual path
+            href={Resume} // Replace with actual path
             download="Lilli_Nappi_Resume.pdf"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline inline-flex items-center"
           >
-            Resume
+            <img src={ResumeIcon} alt="Resume" className="w-5 h-5 mr-2" />
           </a>
-
           {/* Contact Email */}
           <a
             href="mailto:lnappi@stevens.edu"
-            className="text-blue-600 hover:underline"
+            className="text-blue-600 hover:underline inline-flex items-center"
           >
-            Contact
+            <img src={EmailIcon} alt="Email" className="w-5 h-5 mr-2" />
           </a>
-        </div>
-
-        <div className="flex flex-wrap gap-2 justify-center pt-2">
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Python</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Java</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">C/C++</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">JavaScript</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">HTML</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">CSS</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Node.js</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">React</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Tailwind CSS</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">mySQL</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">PostgreSQL</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">mongoDB</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">mongoose</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">graphQL</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Linux</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Unix</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Bash</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Jupyter</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">OCaml</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Git</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Docker</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">Ubuntu</p>
-          </div>
-          <div className="group text-center p-1 border rounded-md transition duration-300 hover:bg-blue-500 hover:text-white">
-            <p className="text-xs text-gray-600 group-hover:text-white">AWS</p>
-          </div>
         </div>
         {/* Tab List */}
         <div className="border-b border-gray-300 mb-4">
