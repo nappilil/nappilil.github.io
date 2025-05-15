@@ -10,8 +10,7 @@ const projects = [
     title: 'HeraHealth',
     duration: 'OCT 2024 - MAY 2025',
     image: HeraHealth,
-    description: 'A medical imaging app that quantifies postpartum blood loss on maternal pads with 97% accuracy through AI image recongition model, aiding in the early detection of postpartum hemorrhaging.\
-    Awarded Best Computer Science Senior Design Project',
+    description: 'Awarded Best Computer Science Senior Design Project: a medical imaging app that quantifies postpartum blood loss on maternal pads with 97% accuracy through AI image recongition model, aiding in the early detection of postpartum hemorrhaging.',
     tech: ['Node.js', 'Python', 'Rest API', 'Postman', 'MongoDB Atlas'],
     link: 'https://www.linkedin.com/company/herahealthinc/',
   },
