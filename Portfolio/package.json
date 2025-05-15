@@ -10,27 +10,30 @@
     "preview": "vite preview",
     "deploy": "vite build && gh-pages -d dist"
   },
-  "homepage": "https://nappilil.github.io/nappilil.github.io",
+  "homepage": "https://nappilil.github.io",
   "dependencies": {
     "autoprefixer": "^10.4.20",
+    "lucide-react": "^0.475.0",
     "postcss": "^8.5.2",
     "prettier-plugin-tailwindcss": "^0.6.8",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icons": "^5.5.0",
     "react-router-dom": "^6.27.0",
-    "tailwindcss": "^3.4.17"
+    "tailwindcss": "^3.4.17",
+    "xss": "^1.0.15"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@vitejs/plugin-react": "^4.3.3",
+    "@vitejs/plugin-react": "^1.3.2",
     "eslint": "^9.13.0",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
     "gh-pages": "^6.3.0",
     "globals": "^15.11.0",
-    "vite": "^5.4.10"
+    "vite": "^6.1.1"
   }
 }
