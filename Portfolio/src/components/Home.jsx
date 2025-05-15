@@ -105,7 +105,8 @@ function Home() {
           <p>Minor - Science, Technology & Society</p>
           <p className="text-sm focus:text-gray-600 dark:text-gray-400">Aug 2021 - May 2025</p>
           <ul className="list-disc ml-6 pt-1">
-            <li>Stevens Women in Computer Science Club (SWiCs)</li>
+            <li>Awarded Best Computer Science Senior Design Project</li>
+            <li>Placed 3rd in Ansary Entrepreneurship Competition</li>
             <li>Multiple Dean List Recipient</li>
             <li>Presidential Scholarship Recipient</li>
           </ul>
