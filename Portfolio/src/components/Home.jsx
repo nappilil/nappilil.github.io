@@ -11,6 +11,64 @@ const role = import.meta.env.VITE_ROLE;
 function Home() {
   const [activeTab, setActiveTab] = useState('work');
 
+  const experience = [
+    {
+      company: "BD (Becton Dickinson)",
+      title: "AI Operational Analyst",
+      duration: "Jun 2025 - Present",
+      location: "Franklin Lakes, NJ",
+      logo: BDXLogo
+    },
+    {
+      title: "Application Development Intern",
+      duration: "Jun 2024 - Aug 2024",
+      location: "Franklin Lakes, NJ",
+      achievments: [
+        "Spearheaded GenAI Chatbot, automating 80% of end-user’s inquiries during hypercase",
+        "Developed app to automate purchase order requests for hundreds of vendors across BDI business segment",
+        "Identified JDE password reset automation saving $20k in development with cross-functional team collaboration",
+        "Led requirement sessions with global stakeholders for ERP project saving $450k annually"
+      ],
+    },
+    {
+      company: "Code Ninjas",
+      title: "Curriculum Developer",
+      duration: "Sep 2024 - Jun 2025",
+      location: "Remote",
+      description: "The largest children&apos;s coding franchise, uses my curriculum across 400+ locations, reaching over 100,000 students.",
+      achievments: [
+        "Developed Interactive Godot Tour plugin adapted by GDQuest for beginners to explore Godot’s Interface",
+        "Created AI Acadmies and Godot curriculum content, constistenly meeting weekly sprint deadlines",
+        "Developed 5-day cybersecurity camp teaching importance of privacy, strong passwords, MFA, malware, identifying phishing scams, cryptography methods, and cybersecurity careers",
+        "Performed QA testing, piloting programs, and training development"
+      ],
+      logo: CodeNinjaLogo
+    },
+    {
+      title: "Assistant Site Director",
+      duration: "Jan 2024 - Nov 2024",
+      location: "Midland Park, NJ",
+      achievments: [
+        "Managed 20+ camp curriculums, supervised 15+ staff members, and oversaw daily operations",
+        "Developed monthly coding challenges for students, improving customer engagement and retention",
+        "Boosted sign-up rates by launching YouTube Channel showcasing students’ accomplishments",
+      ],
+    },
+    {
+      title: "Code Sensei",
+      duration: "Sep 2023 - Nov 2024",
+      location: "Midland Park, NJ",
+      achievments: [
+        "Designed top-selling curriculum for Girl Scouts to earn coding badge, leading to partnership with Girl Scouts of Northern NJ",
+        "Recognized as Employee of the Month for two consecutive months within the first few months of employment",
+        "Led 15+ camps teaching AI/ML, coding mods in Minecraft Java Edition and developing Roblox games in Lua",
+        "Instructed children in JavaScript and C#, teaching object-oriented programming, and game development",
+        "Debugged code, graded projects and provided constant communication to parents on student’s progress"
+      ],
+    }
+
+  ]
+
   const renderContent = () => {
     if (activeTab === 'work') {
       return (
@@ -19,77 +77,31 @@ function Home() {
 
           <div className="pl-10 space-y-8">
             <div className="space-y-5 text-left">
-              {/* BD - Application Development Intern */}
-              <div className="relative">
-                <div className="absolute -left-12 top-0">
-                  <img
-                    src={BDXLogo}
-                    alt="Becton Dickinson"
-                    className="w-8 h-8 rounded-full"
-                  />
+              {experience.map((experience, index) => (
+                <div key={index} className="relative">
+                  {experience.logo !== undefined && <div className="absolute -left-12 top-0">
+                    <img
+                      src={experience.logo}
+                      alt={experience.company}
+                      className="w-8 h-8 rounded-full"
+                    />
+                  </div>}
+                  {experience.company !== undefined && <h4 className="text-lg font-bold">{experience.company}</h4>}
+                  {experience.title !== undefined && <h5 className="text-md font-semibold">{experience.title}</h5>}
+                  <p className="text-sm focus:text-gray-600 dark:text-gray-400">{experience.duration}</p>
+                  <p className="text-sm focus:text-gray-600 dark:text-gray-400">{experience.location}</p>
+                  {experience.description !== undefined && <p className="mt-1">{experience.description}</p>}
+                  {experience.achievments !== undefined && <ul className="list-disc ml-6 mt-1">
+                    {experience.achievments.map((achievment) => (
+                        <li>{achievment}</li>
+                    ))}
+                  </ul>}
                 </div>
-                <h4 className="text-lg font-bold">Becton Dickinson (BD)</h4>
-                <h5 className="text-md font-semibold">Application Development Intern</h5>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Jun 2024 - Aug 2024</p>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Franklin Lakes, NJ</p>
-                <ul className="list-disc ml-6 mt-1">
-                  <li>Spearheaded GenAI Chatbot, automating 80% of end-user’s inquiries during hypercase</li>
-                  <li>Developed app to automate purchase order requests for hundreds of vendors across BDI business segment</li>
-                  <li>Identified JDE password reset automation saving $20k in development with cross-functional team collaboration</li>
-                  <li>Led requirement sessions with global stakeholders for ERP project saving $450k annually</li>
-                </ul>
-              </div>
-              {/* Code Ninjas - Curriculum Developer */}
-              <div className="relative">
-                <div className="absolute -left-12 top-0">
-                  <img
-                    src={CodeNinjaLogo}
-                    alt="Code Ninjas Logo"
-                    className="w-8 h-8 rounded-full"
-                  />
-                </div>
-                <h4 className="text-lg font-bold">Code Ninjas</h4>
-                <h5 className="text-md font-semibold">Curriculum Developer</h5>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Sep 2024 - Present</p>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Contract · Remote</p>
-                <p className="mt-1">
-                  The largest children&apos;s coding franchise, uses my curriculum across 400+ locations, reaching over 100,000 students.
-                </p>
-                <ul className="list-disc ml-6 mt-1">
-                  <li>Developed 5-day cybersecurity camp teaching importance of privacy, strong passwords, MFA, malware, identifying phishing scams, cryptography methods, and cybersecurity careers </li>
-                  <li>Performed QA tests, debugging, piloting, and training development</li>
-                </ul>
-              </div>
-
-              {/* Code Ninjas - Assistant Site Director */}
-              <div className="relative">
-                <h5 className="text-md font-semibold">Assistant Site Director</h5>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Jan 2024 - Nov 2024</p>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Midland Park, NJ</p>
-                <ul className="list-disc ml-6 mt-1">
-                  <li>Managed 20+ camp curriculums, supervised 15+ staff members, and oversaw daily operations</li>
-                  <li>Developed monthly coding challenges for students, improving customer engagement and retention</li>
-                  <li>Boosted sign-up rates by launching YouTube Channel showcasing students’ accomplishments</li>
-                </ul>
-              </div>
-
-              {/* Code Ninjas - Code Sensei */}
-              <div className="relative">
-                <h5 className="text-md font-semibold">Code Sensei</h5>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Sep 2023 - Nov 2024</p>
-                <p className="text-sm focus:text-gray-600 dark:text-gray-400">Midland Park, NJ</p>
-                <ul className="list-disc ml-6 mt-1">
-                  <li>Designed top-selling curriculum for Girl Scouts to earn coding badge, leading to partnership with Girl Scouts of Northern NJ</li>
-                  <li>Recognized as Employee of the Month for two consecutive months within the first few months of employment</li>
-                  <li>Led 15+ camps teaching AI/ML, coding mods in Minecraft Java Edition and developing Roblox games in Lua</li>
-                  <li>Instructed children in JavaScript and C#, teaching object-oriented programming, and game development</li>
-                  <li>Debugged code, graded projects and provided constant communication to parents on student’s progress</li>
-                </ul>
-              </div>
+              ))}
             </div>
           </div>
         </div>
-      );
+      )
     } else if (activeTab === 'education') {
       return (
         <div>
@@ -97,7 +109,7 @@ function Home() {
             <img
               src={StevensLogo}
               alt="Stevens Institute of Technology"
-              className="w-8 h-8" 
+              className="w-8 h-8"
             />
             <h4 className="text-lg font-bold">Stevens Institute of Technology</h4>
           </div>
@@ -110,7 +122,6 @@ function Home() {
             <li>Multiple Dean List Recipient</li>
             <li>Presidential Scholarship Recipient</li>
           </ul>
-          {/* Button to Link to Projects */}
           <div className="flex flex-wrap gap-2 pt-2">
             <a
               href="#"
@@ -129,7 +140,6 @@ function Home() {
   return (
     <div className="min-h-screen flex items-center justify-center pt-10">
       <div className="max-w-lg focus:border w-full rounded-lg p-6 text-center">
-        {/* Profile Picture */}
         <img
           src="https://avatars.githubusercontent.com/u/116825146?v=4"
           alt="Profile Picture"
@@ -139,7 +149,6 @@ function Home() {
         <h2 className="text-3xl font-bold mb-2">Hi, I&apos;m Lilli!</h2>
         <p className="mb-2">{role}</p>
         <div className="flex space-x-6 mb-3 justify-center items-center">
-          {/* Resume Download */}
           <a
             href={Resume}
             download="Lilli_Nappi_Resume.pdf"
@@ -149,7 +158,6 @@ function Home() {
             <FaFileAlt className="w-6 h-6" />
           </a>
 
-          {/* LinkedIn */}
           <a
             href="https://www.linkedin.com/in/lilli-nappi-727402262/"
             className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-purple-500"
@@ -159,7 +167,6 @@ function Home() {
             <FaLinkedin className="w-6 h-6" />
           </a>
 
-          {/* GitHub */}
           <a
             href="https://github.com/nappilil"
             className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-purple-500"
@@ -169,7 +176,6 @@ function Home() {
             <FaGithub className="w-6 h-6" />
           </a>
 
-          {/* Contact Email */}
           <a
             href='/#/contact'
             className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-purple-500"
@@ -178,7 +184,6 @@ function Home() {
           </a>
         </div>
 
-        {/* Tab List */}
         <div className="border-b border-gray-200 mb-4">
           <button
             className={`py-2 px-4 ${activeTab === 'work'
