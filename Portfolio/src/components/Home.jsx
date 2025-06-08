@@ -1,9 +1,10 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import StevensLogo from "../assets/stevens-institute-of-technology-logo.png"
 import BDXLogo from "../assets/BDX.png"
 import CodeNinjaLogo from "../assets/code-ninja.png"
-import Resume from "../assets/Lilli-Nappi-Resume-2025.pdf"
-import { FaLinkedin, FaGithub, FaFileAlt, FaEnvelope } from 'react-icons/fa';
+import { LiaFileDownloadSolid } from "react-icons/lia";
+import { AiOutlineLinkedin, AiOutlineGithub, AiOutlineMail } from 'react-icons/ai';
 import './App.css';
 
 const role = import.meta.env.VITE_ROLE;
@@ -17,7 +18,8 @@ function Home() {
       title: "AI Operational Analyst",
       duration: "Jun 2025 - Present",
       location: "Franklin Lakes, NJ",
-      logo: BDXLogo
+      logo: BDXLogo,
+      website: 'https://www.bd.com/en-us'
     },
     {
       title: "Application Development Intern",
@@ -42,7 +44,8 @@ function Home() {
         "Developed 5-day cybersecurity camp teaching importance of privacy, strong passwords, MFA, malware, identifying phishing scams, cryptography methods, and cybersecurity careers",
         "Performed QA testing, piloting programs, and training development"
       ],
-      logo: CodeNinjaLogo
+      logo: CodeNinjaLogo,
+      website: 'https://www.codeninjas.com/'
     },
     {
       title: "Assistant Site Director",
@@ -80,20 +83,22 @@ function Home() {
               {experience.map((experience, index) => (
                 <div key={index} className="relative">
                   {experience.logo !== undefined && <div className="absolute -left-12 top-0">
-                    <img
-                      src={experience.logo}
-                      alt={experience.company}
-                      className="w-8 h-8 rounded-full"
-                    />
+                    <a href={experience.website} target="_blank">
+                      <img
+                        src={experience.logo}
+                        alt={experience.company}
+                        className="w-8 h-8 rounded-full"
+                      />
+                    </a>
                   </div>}
                   {experience.company !== undefined && <h4 className="text-lg font-bold">{experience.company}</h4>}
                   {experience.title !== undefined && <h5 className="text-md font-semibold">{experience.title}</h5>}
-                  <p className="text-sm focus:text-gray-600 dark:text-gray-400">{experience.duration}</p>
-                  <p className="text-sm focus:text-gray-600 dark:text-gray-400">{experience.location}</p>
+                  <time className="text-sm text-gray-400">{experience.duration}</time>
+                  {/*<p className="text-sm focus:text-gray-600 dark:text-gray-400">{experience.location}</p>*/}
                   {experience.description !== undefined && <p className="mt-1">{experience.description}</p>}
                   {experience.achievments !== undefined && <ul className="list-disc ml-6 mt-1">
                     {experience.achievments.map((achievment) => (
-                        <li>{achievment}</li>
+                      <li>{achievment}</li>
                     ))}
                   </ul>}
                 </div>
@@ -106,11 +111,13 @@ function Home() {
       return (
         <div>
           <div className="flex items-center space-x-2 mb-2">
-            <img
-              src={StevensLogo}
-              alt="Stevens Institute of Technology"
-              className="w-8 h-8"
-            />
+            <a href="https://www.stevens.edu/">
+              <img
+                src={StevensLogo}
+                alt="Stevens Institute of Technology"
+                className="w-8 h-8"
+              />
+            </a>
             <h4 className="text-lg font-bold">Stevens Institute of Technology</h4>
           </div>
           <p>Bachelor of Science - Computer Science</p>
@@ -124,8 +131,8 @@ function Home() {
           </ul>
           <div className="flex flex-wrap gap-2 pt-2">
             <a
-              href="#"
-              className="inline-block dark:bg-purple-500 dark:hover:bg-purple-600 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-2 text-sm rounded-md">Final Year Project
+              href="https://www.stevens.edu/news/capstone-excellence-showcased-stevens-2025-innovation-expo-brings-student"
+              className="inline-block dark:bg-purple-500 dark:hover:bg-purple-600 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-1 px-2 text-sm rounded-md">Final Capstone Project
             </a>
             <a
               href="https://github.com/nappilil/School-Projects"
@@ -149,14 +156,12 @@ function Home() {
         <h2 className="text-3xl font-bold mb-2">Hi, I&apos;m Lilli!</h2>
         <p className="mb-2">{role}</p>
         <div className="flex space-x-6 mb-3 justify-center items-center">
-          <a
-            href={Resume}
-            download="Lilli_Nappi_Resume.pdf"
+          <Link
+            to="/resume"
             className="flex items-center space-x-2 text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-purple-500"
           >
-            <span className="hidden sm:inline">Resume</span>
-            <FaFileAlt className="w-6 h-6" />
-          </a>
+            <LiaFileDownloadSolid className="w-6 h-6" />
+          </Link>
 
           <a
             href="https://www.linkedin.com/in/lilli-nappi-727402262/"
@@ -164,7 +169,7 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaLinkedin className="w-6 h-6" />
+            <AiOutlineLinkedin className="w-6 h-6" />
           </a>
 
           <a
@@ -173,14 +178,14 @@ function Home() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <FaGithub className="w-6 h-6" />
+            <AiOutlineGithub className="w-6 h-6" />
           </a>
 
           <a
             href='/#/contact'
             className="text-gray-800 dark:text-gray-200 hover:text-blue-500 dark:hover:text-purple-500"
           >
-            <FaEnvelope className="w-6 h-6" />
+            <AiOutlineMail className="w-6 h-6" />
           </a>
         </div>
 

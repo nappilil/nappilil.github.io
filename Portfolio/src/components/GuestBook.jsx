@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Draggable from 'react-draggable';
 import { collection, addDoc, getDocs, serverTimestamp, query, orderBy } from 'firebase/firestore';
-import { db } from '../firebase'; // make sure your firebase.js exports 'db' correctly
+import { db } from '../firebase'; 
 import { Filter } from 'bad-words';
 import xss from 'xss';
 
 const filter = new Filter();
-filter.replaceRegex = /./g; // replace each character in bad word
-filter.replaceWith = '#';   // censor with '#'
+filter.replaceRegex = /./g; 
+filter.replaceWith = '#';   
 
 const GuestBook = ({ onClose }) => {
   const [formData, setFormData] = useState({ name: '', message: '', phone: '' });
@@ -49,7 +49,6 @@ const GuestBook = ({ onClose }) => {
     const sanitizedName = xss(formData.name.trim());
     const sanitizedMessage = xss(formData.message.trim());
 
-    // Clean profanity by replacing bad words with #
     const cleanName = filter.clean(sanitizedName);
     const cleanMessage = filter.clean(sanitizedMessage);
 
@@ -137,7 +136,7 @@ const GuestBook = ({ onClose }) => {
               value={formData.message}
               onChange={handleChange}
               required
-              rows={2}
+              rows={1}
               className="w-full p-3 mb-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-800
                 text-gray-900 dark:text-gray-100 text-base placeholder-gray-400 dark:placeholder-gray-500 resize-vertical
                 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -153,8 +152,8 @@ const GuestBook = ({ onClose }) => {
             />
             <button
               type="submit"
-              className="w-[120px] mx-auto block py-2 rounded-lg bg-blue-600 hover:bg-blue-700 dark:bg-purple-600 dark:hover:bg-purple-700
-                text-white font-semibold text-lg shadow-md hover:shadow-lg"
+              className="w-[120px] mx-auto block py-2 rounded-lg bg-blue-500 hover:bg-blue-600 dark:bg-purple-600 dark:hover:bg-purple-700
+                text-white font-semibold text-lg shadow-md"
             >
               Sign
             </button>
