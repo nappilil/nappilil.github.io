@@ -26,9 +26,9 @@ function Home() {
       duration: "Jun 2024 - Aug 2024",
       location: "Franklin Lakes, NJ",
       achievments: [
-        "Spearheaded GenAI Chatbot, automating 80% of end-user’s inquiries during hypercase",
+        "Spearheaded GenAI Chatbot, automating 80% of end-user’s inquiries during hypercare",
         "Developed app to automate purchase order requests for hundreds of vendors across BDI business segment",
-        "Identified JDE password reset automation saving $20k in development with cross-functional team collaboration",
+        "Identified JDE password reset automation saving $20k in development through cross-functional team collaboration",
         "Led requirement sessions with global stakeholders for ERP project saving $450k annually"
       ],
     },
@@ -37,12 +37,13 @@ function Home() {
       title: "Curriculum Developer",
       duration: "Sep 2024 - Jun 2025",
       location: "Remote",
-      description: "The largest children&apos;s coding franchise, uses my curriculum across 400+ locations, reaching over 100,000 students.",
+      description: "The largest children's coding franchise, uses my curriculum across 400+ locations, reaching over 100,000 students.",
       achievments: [
-        "Developed Interactive Godot Tour plugin adapted by GDQuest for beginners to explore Godot’s Interface",
-        "Created AI Acadmies and Godot curriculum content, constistenly meeting weekly sprint deadlines",
-        "Developed 5-day cybersecurity camp teaching importance of privacy, strong passwords, MFA, malware, identifying phishing scams, cryptography methods, and cybersecurity careers",
-        "Performed QA testing, piloting programs, and training development"
+        "Rapidly developed Interactive Godot Tour plugin using GDScript, a key onboarding tool for students to explore Godot’s Interface",
+        "Exceeded weekly sprint deadlines consistently delivering high-quality AI and Godot curriculum content",
+        "Created 5-day cybersecurity that taught online privacy, password strength, MFA, malware, phishing scams, and cryptography methods through hands on activities",
+        "Defined documentation, styling and content standards for introducing built-in Godot functions",
+        "Performed QA testing, piloted new programs, and created training resources to faciliate smoother rollouts of content"
       ],
       logo: CodeNinjaLogo,
       website: 'https://www.codeninjas.com/'
